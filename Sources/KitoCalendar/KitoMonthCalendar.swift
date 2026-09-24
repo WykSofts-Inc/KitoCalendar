@@ -199,14 +199,14 @@ public struct KitoMonthCalendar: View {
                 TodayCapsule(palette: palette) { scroll(to: thisMonth) }
                     .transition(.scale(scale: 0.6).combined(with: .opacity))
             }
-            CalendarIconButton(systemImage: "chevron.left", label: "Previous month", bounce: backTaps) {
+            CalendarIconButton(systemImage: "chevron.backward", label: "Previous month", bounce: backTaps) {
                 guard let index, index > 0 else { return }
                 backTaps += 1
                 scroll(to: months[index - 1])
             }
             .disabled(!canGoBack)
             .opacity(canGoBack ? 1 : 0.35)
-            CalendarIconButton(systemImage: "chevron.right", label: "Next month", bounce: forwardTaps) {
+            CalendarIconButton(systemImage: "chevron.forward", label: "Next month", bounce: forwardTaps) {
                 guard let index, index < months.count - 1 else { return }
                 forwardTaps += 1
                 scroll(to: months[index + 1])
