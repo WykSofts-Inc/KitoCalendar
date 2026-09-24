@@ -156,7 +156,7 @@ public struct KitoDateRangeBar: View {
                     .minimumScaleFactor(0.75)
             }
             Spacer(minLength: 0)
-            Image(systemName: "chevron.right")
+            Image(systemName: "chevron.forward")
                 .font(theme.typography.label.weight(.semibold))
                 .foregroundStyle(theme.colors.onSurface.opacity(0.35))
         }

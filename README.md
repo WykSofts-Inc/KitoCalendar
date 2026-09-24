@@ -125,6 +125,13 @@ KitoCalendarMath.agenda(for: events, calendar: calendar)
 
 All of it is pure and covered by unit tests.
 
+## Right-to-left
+
+Everything mirrors in right-to-left layouts: the month grid, week strip and paging scroll views run
+from the right, range bands and timeline columns follow them, and weekday order still comes from
+`calendar.firstWeekday`. Previous/next and disclosure chevrons use `chevron.backward`/`.forward`, so
+they point the right way in Arabic or Hebrew. Dates follow `\.calendar` and `\.locale` from the environment.
+
 ## Installation
 
 ```swift

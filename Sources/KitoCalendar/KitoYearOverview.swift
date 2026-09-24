@@ -79,8 +79,8 @@ public struct KitoYearOverview: View {
                     .contentTransition(reduceMotion ? .opacity : .numericText(value: Double(year)))
                     .accessibilityAddTraits(.isHeader)
                 Spacer(minLength: 0)
-                CalendarIconButton(systemImage: "chevron.left", label: "Previous year", bounce: year) { changeYear(by: -1) }
-                CalendarIconButton(systemImage: "chevron.right", label: "Next year", bounce: year) { changeYear(by: 1) }
+                CalendarIconButton(systemImage: "chevron.backward", label: "Previous year", bounce: year) { changeYear(by: -1) }
+                CalendarIconButton(systemImage: "chevron.forward", label: "Next year", bounce: year) { changeYear(by: 1) }
             }
 
             LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: theme.spacing.sm), count: 3), spacing: theme.spacing.sm) {
@@ -195,7 +195,7 @@ public struct KitoYearOverview: View {
                 Button {
                     withAnimation(reduceMotion ? nil : .spring(response: 0.5, dampingFraction: 0.85)) { focusedMonth = nil }
                 } label: {
-                    Label(String(year), systemImage: "chevron.left")
+                    Label(String(year), systemImage: "chevron.backward")
                         .font(theme.typography.label.weight(.semibold))
                         .foregroundStyle(palette.accent)
                         .padding(.vertical, theme.spacing.xs)
@@ -204,8 +204,8 @@ public struct KitoYearOverview: View {
                 .buttonStyle(KitoPressStyle())
                 .accessibilityLabel("Back to \(year)")
                 Spacer(minLength: 0)
-                CalendarIconButton(systemImage: "chevron.left", label: "Previous month") { moveFocus(by: -1) }
-                CalendarIconButton(systemImage: "chevron.right", label: "Next month") { moveFocus(by: 1) }
+                CalendarIconButton(systemImage: "chevron.backward", label: "Previous month") { moveFocus(by: -1) }
+                CalendarIconButton(systemImage: "chevron.forward", label: "Next month") { moveFocus(by: 1) }
             }
             Text(format.monthName(month))
                 .font(theme.typography.titleLarge)
