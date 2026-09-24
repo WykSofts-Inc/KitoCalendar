@@ -1,5 +1,7 @@
 # KitoCalendar
 
+**[Documentation](https://wyksofts-inc.github.io/KitoCalendar/documentation/kitocalendar/)**
+
 Calendars for SwiftUI: a month grid you swipe through, with single, multiple and range selection,
 a week strip, a year overview that zooms into a month, booking time slots, a day timeline with a
 live "now" line, an agenda with sticky day headers, and a date range field with presets. Part of the
